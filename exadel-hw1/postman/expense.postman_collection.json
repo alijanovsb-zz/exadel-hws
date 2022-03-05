@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "7cc8cdc9-85c6-4a29-8100-a8ed9d3a2bc9",
+		"name": "expense",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET All expense",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/expense",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"expense"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get expense with [:id]",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/expense/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"expense",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/expense",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"expense"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/expense",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"expense"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/expense",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"expense"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete expense with [:id]",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/expense/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"expense",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
