@@ -9,9 +9,6 @@ const incomeRouter = require("./data/incomes");
 const expenseRouter = require("./data/expenses");
 const expenseCategoryRouter = require("./data/expensesCategory");
 const passport = require("passport");
-// const { jwtCallback } = require("./passport");
-// const JwtStrategy = require("passport-jwt").Strategy;
-// const ExtractJwt = require("passport-jwt").ExtractJwt;
 
 const PORT = process.env.PORT;
 
@@ -25,15 +22,6 @@ app.use(logger);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(passport.initialize());
-
-// const opts = {
-//   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-//   secretOrKey: process.env.JWT_SECRET,
-// };
-
-// passport.use(new JwtStrategy(opts, jwtCallback));
-
-// const auth = passport.authenticate("jwt", { session: false });
 
 app.use("/login", login);
 app.use("/limit", limits);
