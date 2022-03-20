@@ -3,11 +3,7 @@ const cors = require("cors");
 const express = require("express");
 const login = require("./data/login");
 const register = require("./data/register");
-const limits = require("./data/limits");
 const usersRouter = require("./data/users");
-const incomeRouter = require("./data/incomes");
-const expenseRouter = require("./data/expenses");
-const expenseCategoryRouter = require("./data/expensesCategory");
 const passport = require("passport");
 
 const PORT = process.env.PORT;
