@@ -1,13 +1,15 @@
 require("dotenv").config();
-const express = require("express");
-const router = express.Router();
 const jwt = require("jsonwebtoken");
-const { loginUser } = require("../database");
+const User = require("../models/userModel");
+const asyncHandler = require("express-async-handler");
 
-router.post("/", (req, res) => {
-  const user = loginUser(req.body.email, req.body.password);
+//@route POST /auth/login
+const authUser = asyncHandler(async (req, res) => {
+  const { email, password } = req.body;
 
-  if (user) {
+  const user = await User.findOne({ email });
+
+  if (user && (await user.matchPassword(password))) {
     const payload = {
       id: user.id,
       email: user.email,
@@ -29,4 +31,4 @@ router.post("/", (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = authUser;
