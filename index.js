@@ -5,6 +5,9 @@ const userRoutes = require("./routes/userRoutes");
 const register = require("./data/register");
 const usersRouter = require("./data/users");
 const passport = require("passport");
+const connectDB = require("./db/database");
+
+connectDB();
 
 const PORT = process.env.PORT;
 
@@ -20,7 +23,5 @@ app.use(express.urlencoded({ extended: false }));
 app.use(passport.initialize());
 
 app.use("/auth", userRoutes);
-app.use("/register", register);
-// app.use("/users", usersRouter);
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));

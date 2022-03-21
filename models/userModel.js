@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema(
   {
@@ -11,10 +12,6 @@ const userSchema = new mongoose.Schema(
       min: 18,
       max: 120,
       required: true,
-      validate: {
-        validator: (v) => v % 2 === 0,
-        message: (prop) => `Age (${prop.value}) must be even`,
-      },
     },
     email: {
       type: String,
@@ -33,7 +30,7 @@ const userSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  },
+  }
 );
 
 userSchema.methods.matchPassword = async function (password) {
@@ -52,8 +49,13 @@ userSchema.virtual("namedEmail").get(function () {
   return `${this.name} <${this.email}>`;
 });
 
-userSchema.pre("save", function (next) {
-  this.edited++;
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
+    next();
+  }
+  const salt = await bcrypt.genSalt(10);
+
+  this.password = bcrypt.hash(this.password, salt);
   next();
 });
 
