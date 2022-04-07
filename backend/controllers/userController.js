@@ -29,6 +29,7 @@ const authUser = asyncHandler(async (req, res) => {
       id: user.id,
       email: user.email,
       role: user.role,
+      expiresIn: 1000 * 60 * 10,
       token: `Bearer ${token}`,
     });
   } else {
