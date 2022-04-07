@@ -15,6 +15,12 @@ export class AuthService {
       .pipe(tap((res: any) => this.setSession(res)));
   }
 
+  healthCheck() {
+    return this.http.post('http://localhost:8000/auth/health', {
+      test: 'test',
+    });
+  }
+
   isLoggedIn(): boolean {
     return new Date().getTime() < Number(localStorage.getItem('expires_at'));
   }

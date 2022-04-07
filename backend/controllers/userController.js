@@ -71,4 +71,8 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { authUser, registerUser };
+const health = asyncHandler(async (req, res) => {
+  return res.send({ message: "Health-check is ok" });
+});
+
+module.exports = { authUser, registerUser, health };

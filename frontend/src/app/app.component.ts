@@ -18,4 +18,10 @@ export class AppComponent {
     this.authService.logout();
     this.router.navigate(['/login']);
   }
+
+  healthCheck() {
+    this.authService.healthCheck().subscribe((res) => {
+      console.log('healthCheck', res);
+    });
+  }
 }

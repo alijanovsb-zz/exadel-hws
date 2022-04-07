@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { AuthFormComponent } from './auth-form/auth-form.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
 
 const routes: Routes = [
   {
@@ -19,6 +21,9 @@ const routes: Routes = [
     SharedModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   exports: [AuthFormComponent],
 })
