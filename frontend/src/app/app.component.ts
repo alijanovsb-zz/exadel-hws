@@ -19,9 +19,9 @@ export class AppComponent {
     this.router.navigate(['/login']);
   }
 
-  healthCheck() {
-    this.authService.healthCheck().subscribe((res) => {
-      console.log('healthCheck', res);
+  randomCheck() {
+    this.authService.randomCheck().subscribe((req) => {
+      console.log('randomCheck', req);
     });
   }
 }

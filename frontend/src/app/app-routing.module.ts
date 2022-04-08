@@ -8,10 +8,10 @@ const routes: Routes = [
     pathMatch: 'full',
     redirectTo: '/todo',
   },
-  {
-    path: '**',
-    component: NotFoundComponent,
-  },
+  // {
+  //   path: '**',
+  //   component: NotFoundComponent,
+  // },
 ];
 
 @NgModule({
