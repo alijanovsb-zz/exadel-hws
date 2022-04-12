@@ -36,8 +36,18 @@ export class AuthService {
   }
 
   private setSession(res: any): void {
-    const expiresAt = Date.now() + Number(res.expiresIn);
+    const ltoken = this.parseJwt(res.token);
+    const expiresAt = ltoken.exp * 1000;
+
     localStorage.setItem('access_token', res.token);
     localStorage.setItem('expires_at', JSON.stringify(expiresAt));
   }
+
+  private parseJwt = (token: string) => {
+    try {
+      return JSON.parse(atob(token.split('.')[1]));
+    } catch (e) {
+      return null;
+    }
+  };
 }
