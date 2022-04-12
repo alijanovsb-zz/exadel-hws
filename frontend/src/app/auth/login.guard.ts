@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
@@ -14,11 +13,7 @@ import { AuthService } from './services/auth.service';
   providedIn: 'root',
 })
 export class LoginGuard implements CanActivate {
-  constructor(
-    private authService: AuthService,
-    private router: Router,
-    private _location: Location
-  ) {}
+  constructor(private authService: AuthService, private router: Router) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -28,7 +23,7 @@ export class LoginGuard implements CanActivate {
     | boolean
     | UrlTree {
     if (this.authService.isLoggedIn()) {
-      this._location.back();
+      this.router.navigate(['/']);
       return false;
     }
     return true;
