@@ -31,7 +31,7 @@ export class AuthFormComponent implements OnDestroy, OnInit {
     this.subs = this.authService
       .login({ email, password })
       .subscribe((data) => {
-        this.router.navigate(['/todo']);
+        this.router.navigate(['todo']);
       });
   }
 

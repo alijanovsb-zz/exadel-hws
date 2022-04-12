@@ -6,11 +6,13 @@ import { AuthFormComponent } from './auth-form/auth-form.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
+import { LoginGuard } from './login.guard';
 
 const routes: Routes = [
   {
     path: 'login',
     component: AuthFormComponent,
+    canActivate: [LoginGuard],
   },
 ];
 
