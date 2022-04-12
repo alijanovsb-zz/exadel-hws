@@ -31,6 +31,6 @@ export class LoginGuard implements CanActivate {
       this._location.back();
       return false;
     }
-    return this.router.createUrlTree(['login']);
+    return true;
   }
 }
