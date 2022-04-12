@@ -10,9 +10,10 @@ import { TodoModule } from './todo/todo.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NotAllowedComponent } from './not-allowed/not-allowed.component';
 
 @NgModule({
-  declarations: [AppComponent, NotFoundComponent],
+  declarations: [AppComponent, NotFoundComponent, NotAllowedComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
