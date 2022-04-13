@@ -70,4 +70,8 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { authUser, registerUser };
+const random = asyncHandler(async (req, res) => {
+  return res.send({ message: "random" });
+});
+
+module.exports = { authUser, registerUser, random };
