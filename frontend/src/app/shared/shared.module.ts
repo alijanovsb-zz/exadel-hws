@@ -6,6 +6,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [SpinnerComponent],
@@ -16,6 +18,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatFormFieldModule,
     MatCardModule,
     MatProgressSpinnerModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   exports: [
     MatButtonModule,
@@ -24,6 +28,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatCardModule,
     MatProgressSpinnerModule,
     SpinnerComponent,
+    MatDatepickerModule,
   ],
 })
 export class SharedModule {}

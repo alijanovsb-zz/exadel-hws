@@ -5,9 +5,10 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { SharedModule } from '../shared/shared.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TodoInterceptor } from './todo.interceptor';
+import { CreateTodoComponent } from './create-todo/create-todo.component';
 
 @NgModule({
-  declarations: [TodoComponent, TodoListComponent],
+  declarations: [TodoComponent, TodoListComponent, CreateTodoComponent],
   imports: [CommonModule, SharedModule],
   exports: [TodoComponent],
   providers: [
