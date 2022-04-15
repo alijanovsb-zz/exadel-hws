@@ -11,7 +11,7 @@ export class AuthService {
 
   login(credentials: { email: string; password: string }) {
     return this.http
-      .post(`${APP_CONFIG.api.url}/login`, credentials)
+      .post(`${APP_CONFIG.api.url}auth/login`, credentials)
       .pipe(tap((res: any) => this.setSession(res)));
   }
 
