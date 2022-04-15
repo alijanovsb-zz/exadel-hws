@@ -2,6 +2,7 @@ require("dotenv").config();
 const cors = require("cors");
 const express = require("express");
 const userRoutes = require("../routes/userRoutes");
+const todoRoutes = require("../routes/todoRoutes");
 const passport = require("passport");
 const connectDB = require("../db/database");
 
@@ -26,6 +27,7 @@ app.get("/test", (req, res) => {
 });
 
 app.use("/auth", userRoutes);
+app.use("/todos", todoRoutes);
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
