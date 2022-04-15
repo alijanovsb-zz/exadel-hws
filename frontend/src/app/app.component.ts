@@ -9,12 +9,7 @@ import { SpinnerService } from './shared/services/spinner.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  isVisible: boolean = false;
-  constructor(
-    private authService: AuthService,
-    private router: Router,
-    private spinnerService: SpinnerService
-  ) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   get isLoggedIn(): boolean {
     return this.authService.isLoggedIn();
@@ -31,11 +26,5 @@ export class AppComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    this.spinnerService.showSpinner();
-    this.spinnerService.getSpinnerState$().subscribe((state: boolean) => {
-      this.isVisible = state;
-      console.log('this.isVisible', this.isVisible);
-    });
-  }
+  ngOnInit(): void {}
 }

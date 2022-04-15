@@ -19,18 +19,18 @@ export class TodoListComponent implements OnInit {
   todoList!: ITodoItem[];
 
   ngOnInit(): void {
-    this.spinnerService.showSpinner();
+    // this.spinnerService.showSpinner();
 
     this.todoSubscription = this.todoService.getTodos().subscribe((todos) => {
       this.todoList = todos;
     });
 
-    this.spinnerService
-      .getSpinnerState$()
-      .pipe(delay(2000))
-      .subscribe((state: boolean) => {
-        this.spinnerService.hideSpinner();
-      });
+    // this.spinnerService
+    //   .getSpinnerState$()
+    //   .pipe(delay(2000))
+    //   .subscribe((state: boolean) => {
+    //     this.spinnerService.hideSpinner();
+    //   });
 
     // this.spinnerService.hideSpinner();
     //I had some confusion with this. If possible, please explain. The state for spinner changes too fast.

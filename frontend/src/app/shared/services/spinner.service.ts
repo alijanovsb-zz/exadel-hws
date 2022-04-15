@@ -6,7 +6,7 @@ import { observeOn } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class SpinnerService {
-  private isVisible$: Subject<boolean> = new BehaviorSubject<boolean>(true);
+  private isVisible$: Subject<boolean> = new BehaviorSubject<boolean>(false);
   constructor() {}
 
   getSpinnerState$() {
