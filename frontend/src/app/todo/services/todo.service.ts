@@ -13,6 +13,6 @@ export class TodoService {
   getTodos() {
     return this.httpClient
       .get<ITodoItem[]>(`${APP_CONFIG.api.url}todos/getTodos`)
-      .pipe(delay(1000));
+      .pipe(delay(2000));
   }
 }
