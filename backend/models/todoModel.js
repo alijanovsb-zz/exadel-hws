@@ -20,6 +20,14 @@ const TodoSchema = new mongoose.Schema(
       type: Boolean,
       required: true,
     },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+    expiresAt: {
+      type: Date,
+      default: () => new Date(+new Date() + 24 * 60 * 60 * 1000), //24 hours from now
+    },
   },
   {
     timestamps: true,

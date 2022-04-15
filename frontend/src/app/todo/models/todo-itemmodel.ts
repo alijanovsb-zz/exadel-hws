@@ -3,5 +3,5 @@ export interface ITodoItem {
   description: string;
   completed: boolean;
   createdAt: Date;
-  expiredAt: Date;
+  expiresAt: Date;
 }
