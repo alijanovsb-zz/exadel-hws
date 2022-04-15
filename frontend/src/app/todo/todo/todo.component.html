@@ -1,1 +1,10 @@
-<p>todo works!</p>
+<div class="todos">
+  <div class="todos__list">
+    <app-spinner *ngIf="isVisible"></app-spinner>
+    <app-todo-list></app-todo-list>
+  </div>
+
+  <div class="todos__create">
+    <app-create-todo></app-create-todo>
+  </div>
+</div>

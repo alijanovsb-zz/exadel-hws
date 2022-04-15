@@ -1,0 +1,17 @@
+<mat-card class="todo" *ngFor="let todo of todoList; let i = index">
+  <mat-card-title class="todo__header">{{ todo.name }}</mat-card-title>
+  <mat-card-content class="todo__content">
+    <p class="todo__description">{{ todo.description }}</p>
+    <div class="todo__dates">
+      <p>Created at: {{ todo.createdAt | date }}</p>
+      <p>Expires at: {{ todo.expiresAt | date }}</p>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="todo__actions">
+    <button mat-flat-button class="todo__button" color="primary">EDIT</button>
+    <button mat-flat-button class="todo__button" color="warn">DELETE</button>
+  </mat-card-actions>
+  <mat-card-footer>
+    {{ todo.completed ? "Completed" : "Not completed" }}
+  </mat-card-footer>
+</mat-card>
