@@ -24,7 +24,6 @@ export class AuthService {
   isLoggedIn(): boolean {
     return new Date().getTime() < Number(localStorage.getItem('expires_at'));
   }
-  //I know that I should be using a backend for this, but I'm not sure how to do it yet.
 
   logout(): void {
     localStorage.removeItem('access_token');
